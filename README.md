@@ -40,3 +40,6 @@ function custom_do_slider_everywhere() {
 		'after' => '</div></div>',
 	) );
 }```
+
+#3 BOOTSTRAP
+If you are experiencing a gap on the right side of part of the website (resulting in horizontal scroll bar) it is likely that you are missing a container on one of the sections. Check this before all else!

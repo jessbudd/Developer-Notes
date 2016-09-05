@@ -41,5 +41,12 @@ function custom_do_slider_everywhere() {
 	) );
 } ```</pre>
 
+###Local Dev Site Redirects to Live Site
+It's likely you've forgotten to change the site url. There are four methods to do this (https://codex.wordpress.org/Changing_The_Site_URL), the most simple being adding this code to wp-config file:
+
+<pre>define('WP_HOME','http://example.com');
+define('WP_SITEURL','http://example.com')</pre>
+
+
 ## BOOTSTRAP
 If you are experiencing a gap on the right side of part of the website (resulting in horizontal scroll bar) it is likely that you are missing a container on one of the sections. Check this before all else. If still having issues (particularly at only certain view points) ensure that the container class left and right margins are set to 15px. (If you want to remove the margins for section, do so on the inner element not the container)

@@ -41,6 +41,15 @@ function custom_do_slider_everywhere() {
 	) );
 } ```</pre>
 
+###Woocommerce - Add Icon to Cart Button 
+Add font-awesome to head link and this code to custom css:
+
+```	.woocommerce a.button::after, .woocommerce button.button::after, .woocommerce input.button::after {
+		font-family: 'FontAwesome';
+		content: ' \f08a'; <--font awesome code-->
+	}```
+
+
 ###Local Dev Site Redirects to Live Site
 It's likely you've forgotten to change the site url. There are four methods to do this (https://codex.wordpress.org/Changing_The_Site_URL), the most simple being adding this code to wp-config file:
 

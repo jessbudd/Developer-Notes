@@ -8,7 +8,7 @@ This repo is a list of notes for my future reference.
 `<img src="transp.gif" width="0" height="0" alt="">`
 
 ###HTML
-Some HTML5 tags do not work in any version of IE (eg <main>) and you need to explicitly add the display property to the css. 
+Some HTML5 tags do not work in any version of IE (eg `<main>`) and you need to explicitly add the display property to the css. 
 
 ##Shortcuts
 To get to the cpanel login of most pages type `":2082"` to the end of the url address.

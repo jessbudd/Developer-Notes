@@ -66,4 +66,4 @@ If you are experiencing a gap on the right side of part of the website (resultin
 ##MISCELLANEOUS 
 
 ###Centering Content
-If you want to have your content vertically aligned to center, set parent div to display: table with current div display:table cell; vertically-align: middle;
+If you want to have your content vertically aligned to center, set parent div to `display: table` with current div set to `display:table cell; vertically-align: middle;`

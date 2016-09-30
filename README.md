@@ -62,3 +62,8 @@ define('WP_SITEURL','http://example.com')</pre>
 
 ## BOOTSTRAP
 If you are experiencing a gap on the right side of part of the website (resulting in horizontal scroll bar) it is likely that you are missing a container on one of the sections. Check this before all else. If still having issues (particularly at only certain view points) ensure that the container class left and right margins are set to 15px. (If you want to remove the margins for section, do so on the inner element not the container)
+
+##MISCELLANEOUS 
+
+###Centering Content
+If you want to have your content vertically aligned to center, set parent div to display: table with current div display:table cell; vertically-align: middle;

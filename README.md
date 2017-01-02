@@ -4,7 +4,7 @@ This repo is a list of notes for my future reference.
 
 ##Internet Explorer
 ###Word Breaks
-<wbr> is not supported by any version of IE. If word-wrap:word-break and word-break: word-all do not work, you can insert the following code after the element:
+`<wbr>` is not supported by any version of IE. If word-wrap:word-break and word-break: word-all do not work, you can insert the following code after the element:
 `<img src="transp.gif" width="0" height="0" alt="">`
 
 ###HTML
@@ -22,6 +22,32 @@ To get the IP of a site, type `"nslookup [site address]"` into CLI.
 
 ##WORDPRESS
 
+### Read More Links
+If your theme contains the_excerpt() function (https://developer.wordpress.org/reference/functions/the_excerpt/), the insert "read more"  tag from the post editor will cause the "read more" link to be overridden and not appear on those posts. This is a problem when some posts contain the read more tag and others do not, as it will cause inconsistency on the main page. 
+
+There are two steps to get around this. 
+
+First you need to remove any functions that create the "read more" link to excerpts in the theme's functions.php file. It should look something like this, and can be commented out.
+<pre>/**
+ * Returns a "Read more" link for excerpts
+ 
+function irony_excerpt_more( $more ) {
+	return '<a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __( 'Read more', 'irony' ) . '</a>';
+}
+add_filter( 'excerpt_more', 'irony_excerpt_more' );
+*/</pre>
+
+Secondly, you want to add a read more link to alln excerpts, regardless of their length or whether they contain a read more tag or not. Paste this code into your functions.php file.
+
+<pre>
+//Read More Button For Excerpt
+function themeprefix_excerpt_read_more_link( $output ) {
+	global $post;
+	return $output . ' <a href="' . get_permalink( $post->ID ) . '" class="more-link" title="Read More">Read More</a>';
+}
+add_filter( 'the_excerpt', 'themeprefix_excerpt_read_more_link' );
+</pre>
+
 ###Sub-Menus Not Appearing
 If sub-menus show in HTML and it's not a CSS issue (is the element set to display:none?), then it's likely a PHP or wordpress config issue.
 To check php arrays, wrap in a var_dump eg
@@ -30,7 +56,7 @@ To check php arrays, wrap in a var_dump eg
 
 ###Genesis: Add Widget Area Easily
 Put this in functions.php. This example is for a slider that appears on all pages, but could be modified easily. The key thing to note is the add_action line, it controls where the widget will go.
-<pre>```/** Slider widget area for every page */
+<pre>/** Slider widget area for every page */
 genesis_register_sidebar( array(
 	'id'	=> 'slider-everywhere',
 	'name'	=> __( 'Everywhere Slider', 'ally' ),
@@ -42,7 +68,7 @@ function custom_do_slider_everywhere() {
 		'before' => '<div id="slider-wrap"><div class="slider-inner">',
 		'after' => '</div></div>',
 	) );
-} ```</pre>
+} </pre>
 
 ###Woocommerce - Add Icon to Cart Button 
 Add font-awesome to head link and this code to custom css:

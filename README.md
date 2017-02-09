@@ -92,4 +92,10 @@ If you are experiencing a gap on the right side of part of the website (resultin
 ##MISCELLANEOUS 
 
 ###Centering Content
-If you want to have your content vertically aligned to center, set parent div to `display: table` with current div set to `display:table cell; vertically-align: middle;`
+If you want to have your content vertically aligned to center, set parent div to `display: table` with current div set to ```display:table cell; vertically-align: middle;```
+
+###Clicking "through" divs
+This is particularly useful when you have an absolutely positioned icon over a select input which does not activate the drop down when clicking the icon. 
+
+To access the element below another element set higher element with property/value `pointer-events:none`.
+

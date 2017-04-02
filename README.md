@@ -79,6 +79,29 @@ Add font-awesome to head link and this code to custom css:
 		}
 	</pre>
 
+### Make First Post Image Appear in Excerpt
+This will take the first image of a post when there is no feature image set.
+<pre>function improved_trim_excerpt($text) {
+        global $post;
+        if ( '' == $text ) {
+                $text = get_the_content('');
+                $text = apply_filters('the_content', $text);
+                $text = str_replace('\]\]\>', ']]&gt;', $text);
+                $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
+                $text = strip_tags($text, '<img>');
+                $excerpt_length = 80;
+                $words = explode(' ', $text, $excerpt_length + 1);
+                if (count($words)> $excerpt_length) {
+                        array_pop($words);
+                        array_push($words, '[...]');
+                        $text = implode(' ', $words);
+                }
+        }
+        return $text;
+}
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+add_filter('get_the_excerpt', 'improved_trim_excerpt');
+</pre>
 
 ### Local Dev Site Redirects to Live Site
 It's likely you've forgotten to change the site url. There are four methods to do this (https://codex.wordpress.org/Changing_The_Site_URL), the most simple being adding this code to wp-config file:

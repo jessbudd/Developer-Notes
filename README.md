@@ -110,9 +110,13 @@ It's likely you've forgotten to change the site url. There are four methods to d
 define('WP_SITEURL','http://example.com')</pre>
 
 
-### Plugins  
+### Favourite Plugins  
 
-* Booking plugin with calendar function, forms, payments and supports half days [Bookly](https://codecanyon.net/item/bookly-booking-plugin-responsive-appointment-booking-and-scheduling/7226091)
+* Booking plugin (premium) with calendar function, forms, payments and supports half days [Bookly](https://codecanyon.net/item/bookly-booking-plugin-responsive-appointment-booking-and-scheduling/7226091)
+* Backup plugin with automatic backups to dropbox/drive [Updraft](https://updraftplus.com/)
+* Portfolio plugin [Huge-It](https://huge-it.com/wordpress-portfolio-gallery-user-manual/)
+* Grid layout plugin for your posts and pages (pro version supports woocommerce products etc) [Content Views](https://contentviewspro.com/)
+
 
 ## BOOTSTRAP
 If you are experiencing a gap on the right side of part of the website (resulting in horizontal scroll bar) it is likely that you are missing a container on one of the sections. Check this before all else. If still having issues (particularly at only certain view points) ensure that the container class left and right margins are set to 15px. (If you want to remove the margins for section, do so on the inner element not the container)

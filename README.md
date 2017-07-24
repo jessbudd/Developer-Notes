@@ -116,6 +116,7 @@ define('WP_SITEURL','http://example.com')</pre>
 * Backup plugin with automatic backups to dropbox/drive [Updraft](https://updraftplus.com/)
 * Portfolio plugin [Huge-It](https://huge-it.com/wordpress-portfolio-gallery-user-manual/)
 * Grid layout plugin for your posts and pages (pro version supports woocommerce products etc) [Content Views](https://contentviewspro.com/)
+* Basic free slider [Meta Slider](https://wordpress.org/plugins/ml-slider/)
 
 
 ## BOOTSTRAP

@@ -118,6 +118,15 @@ define('WP_SITEURL','http://example.com')</pre>
 * Grid layout plugin for your posts and pages (pro version supports woocommerce products etc) [Content Views](https://contentviewspro.com/)
 * Basic free slider [Meta Slider](https://wordpress.org/plugins/ml-slider/)
 
+## Accessibility
+
+Screen reader text CSS
+<pre>{position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;}</pre>
 
 ## BOOTSTRAP
 If you are experiencing a gap on the right side of part of the website (resulting in horizontal scroll bar) it is likely that you are missing a container on one of the sections. Check this before all else. If still having issues (particularly at only certain view points) ensure that the container class left and right margins are set to 15px. (If you want to remove the margins for section, do so on the inner element not the container)

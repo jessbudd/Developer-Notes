@@ -22,7 +22,7 @@ To get the IP of a site, type `"nslookup [site address]"` into CLI.
 
 ## WORDPRESS
 
-###Deregister css/js of plugin on front page only
+### Deregister css/js of plugin on front page only
 <pre>// remove Google Maps JS/CSS from the homepage
 add_action( 'wp_print_scripts', 'maps_deregister_javascript', 100 );
 
@@ -40,7 +40,15 @@ function maps_deregister_javascript() {
 
 	}
 }</pre>
+
 https://mor10.com/how-to-remove-wp-geo-plugin-from-specific-pages/
+
+### Conditional to only perform function on posts instead of pages and custom post types
+<pre>
+   if(is_single() &&  get_post_type() == 'post') mk_get_view('blog/components', 'blog-single-bold-hero');
+</pre>
+
+
 
 ### Read More Links
 If your theme contains the_excerpt() function (https://developer.wordpress.org/reference/functions/the_excerpt/), the insert "read more"  tag from the post editor will cause the "read more" link to be overridden and not appear on those posts. This is a problem when some posts contain the read more tag and others do not, as it will cause inconsistency on the main page. 

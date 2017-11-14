@@ -161,6 +161,28 @@ If you are experiencing a gap on the right side of part of the website (resultin
 
 ## MISCELLANEOUS 
 
+### Disable google map scrolling on iframes
+
+Add a div with an .overlay exactly before each gmap iframe insertion, see:
+
+```
+ <div class="overlay" onClick="style.pointerEvents='none'"></div>
+  <iframe src="https://mapsengine.google.com/map/embed?mid=some_map_id" width="640" height="480"></iframe>
+```
+CSS
+
+<pre>
+.overlay {
+   background:transparent; 
+   position:relative; 
+   width:640px;
+   height:480px; /* your iframe height */
+   top:480px;  /* your iframe height */
+   margin-top:-480px;  /* your iframe height */
+}
+</pre>
+The div will cover the map, preventing pointer events from getting to it. But if you click on the div, it becomes transparent to pointer events, activating the map again.
+
 ### Centering Content
 If you want to have your content vertically aligned to center, set parent div to `display: table` with current div set to ```display:table cell; vertically-align: middle;```
 

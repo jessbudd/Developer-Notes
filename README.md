@@ -49,7 +49,6 @@ https://mor10.com/how-to-remove-wp-geo-plugin-from-specific-pages/
 </pre>
 
 
-
 ### Read More Links
 If your theme contains the_excerpt() function (https://developer.wordpress.org/reference/functions/the_excerpt/), the insert "read more"  tag from the post editor will cause the "read more" link to be overridden and not appear on those posts. This is a problem when some posts contain the read more tag and others do not, as it will cause inconsistency on the main page. 
 
@@ -98,7 +97,9 @@ function custom_do_slider_everywhere() {
 	) );
 } </pre>
 
-### Woocommerce - Add Icon to Cart Button 
+## Woocommerce 
+
+### Add Icon to Cart Button 
 Add font-awesome to head link and this code to custom css:
 
 <pre>	.woocommerce a.button::after, .woocommerce button.button::after, .woocommerce input.button::after {
@@ -106,6 +107,29 @@ Add font-awesome to head link and this code to custom css:
 		content: ' \f08a'; <--font awesome code-->
 		}
 	</pre>
+	
+### Add Recent Products to Theme Template
+<pre>
+<?php
+$args = array(
+'post_type' => 'product',
+'stock' => 1,
+'posts_per_page' => 4,
+'orderby' =>'date',
+'order' => 'DESC' );
+$loop = new WP_Query( $args );
+while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
+<div class="span3">
+<a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+<?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="My Image Placeholder" width="65px" height="115px" />'; ?>
+<h3><?php the_title(); ?></h3>
+<span class="price"><?php echo $product->get_price_html(); ?></span>
+</a>
+<?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
+</div><!-- /span3 -->
+<?php endwhile; ?>
+<?php wp_reset_query(); ?>
+</pre>
 
 ### Make First Post Image Appear in Excerpt
 This will take the first image of a post when there is no feature image set.

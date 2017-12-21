@@ -2,13 +2,6 @@
 
 This repo is a list of notes for my future reference.
 
-## Internet Explorer
-### Word Breaks
-`<wbr>` is not supported by any version of IE. If word-wrap:word-break and word-break: word-all do not work, you can insert the following code after the element:
-`<img src="transp.gif" width="0" height="0" alt="">`
-
-### HTML
-Some HTML5 tags do not work in any version of IE (eg `<main>`) and you need to explicitly add the display property to the css. 
 
 ## Shortcuts
 To get to the cpanel login of most pages type `":2082"` to the end of the url address.
@@ -16,7 +9,6 @@ To get to the cpanel login of most pages type `":2082"` to the end of the url ad
 To get to the webmail login of most pages type `":2096"` to the end of the url address.
 
 To get the IP of a site, type `"nslookup [site address]"` into CLI.
-
 
 
 
@@ -109,27 +101,7 @@ Add font-awesome to head link and this code to custom css:
 	</pre>
 	
 ### Add Recent Products to Theme Template
-<pre>
-<?php
-$args = array(
-'post_type' => 'product',
-'stock' => 1,
-'posts_per_page' => 4,
-'orderby' =>'date',
-'order' => 'DESC' );
-$loop = new WP_Query( $args );
-while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-<div class="span3">
-<a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-<?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="My Image Placeholder" width="65px" height="115px" />'; ?>
-<h3><?php the_title(); ?></h3>
-<span class="price"><?php echo $product->get_price_html(); ?></span>
-</a>
-<?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
-</div><!-- /span3 -->
-<?php endwhile; ?>
-<?php wp_reset_query(); ?>
-</pre>
+See gist: https://gist.github.com/jessbudd/66335479ac69391e038d85dfc95e94a4
 
 ### Make First Post Image Appear in Excerpt
 This will take the first image of a post when there is no feature image set.
@@ -215,3 +187,10 @@ This is particularly useful when you have an absolutely positioned icon over a s
 
 To access the element below another element set higher element with property/value `pointer-events:none`.
 
+## Internet Explorer
+### Word Breaks
+`<wbr>` is not supported by any version of IE. If word-wrap:word-break and word-break: word-all do not work, you can insert the following code after the element:
+`<img src="transp.gif" width="0" height="0" alt="">`
+
+### HTML
+Some HTML5 tags do not work in any version of IE (eg `<main>`) and you need to explicitly add the display property to the css. 

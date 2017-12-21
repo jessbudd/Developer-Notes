@@ -100,6 +100,19 @@ Add font-awesome to head link and this code to custom css:
 		}
 	</pre>
 	
+### Query if woocommerce member logged in
+
+```
+ <?php
+
+    if ( wc_memberships_is_user_member() ) {
+	    echo 'Marco';
+	} else {
+	    echo 'Polo';
+	}
+	;?>
+```
+
 ### Add Recent Products to Theme Template
 See gist: https://gist.github.com/jessbudd/66335479ac69391e038d85dfc95e94a4
 

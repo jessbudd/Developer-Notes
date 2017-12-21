@@ -116,6 +116,9 @@ Add font-awesome to head link and this code to custom css:
 ### Add Recent Products to Theme Template
 See gist: https://gist.github.com/jessbudd/66335479ac69391e038d85dfc95e94a4
 
+### Add Most Popular Products to Theme Template 
+See gist: https://gist.github.com/jessbudd/66232f577743fd5fa1b542c48b102f20
+
 ### Make First Post Image Appear in Excerpt
 This will take the first image of a post when there is no feature image set.
 <pre>function improved_trim_excerpt($text) {

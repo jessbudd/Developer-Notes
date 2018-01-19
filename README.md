@@ -103,7 +103,7 @@ See gist: https://gist.github.com/jessbudd/66335479ac69391e038d85dfc95e94a4
 ### Add Most Popular Products to Theme Template 
 See gist: https://gist.github.com/jessbudd/66232f577743fd5fa1b542c48b102f20
 
-### Add Backorder Bbadge To Out of Stock Products 
+### Add Backorder Badge To Out of Stock Products 
 See gist: https://gist.github.com/jessbudd/32b2bc6450750643683b21baa8b89274
 
 This works on the product archive page only. Single product pages will have a text warning applied in the description when the item is set to "in stock" and backorders "allowed, but notify customer".

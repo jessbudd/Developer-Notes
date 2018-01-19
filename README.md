@@ -15,23 +15,7 @@ To get the IP of a site, type `"nslookup [site address]"` into CLI.
 ## WORDPRESS
 
 ### Deregister css/js of plugin on front page only
-<pre>// remove Google Maps JS/CSS from the homepage
-add_action( 'wp_print_scripts', 'maps_deregister_javascript', 100 );
-
-function maps_deregister_javascript() {
-
-	if ( is_front_page() ) {
-
-		wp_deregister_script( 'wpgmp-google-api' );
-		wp_deregister_script( 'wpgmp-frontend' );
-		wp_deregister_script( 'wpgmp-google-map-main' );
-		wp_deregister_script( 'wpgmp-backend-google-maps' );
-		wp_deregister_script( 'wpgmp-backend-google-api' );
-		wp_deregister_script( 'wpgmp-map' );
-        wp_deregister_script( 'flippercode-ui' );
-
-	}
-}</pre>
+see gist: https://gist.github.com/jessbudd/293b8012740183fefae092c074c92c38
 
 https://mor10.com/how-to-remove-wp-geo-plugin-from-specific-pages/
 
@@ -118,6 +102,13 @@ See gist: https://gist.github.com/jessbudd/66335479ac69391e038d85dfc95e94a4
 
 ### Add Most Popular Products to Theme Template 
 See gist: https://gist.github.com/jessbudd/66232f577743fd5fa1b542c48b102f20
+
+### Add Backorder Bbadge To Out of Stock Products 
+See gist: https://gist.github.com/jessbudd/32b2bc6450750643683b21baa8b89274
+
+This works on the product archive page only. Single product pages will have a text warning applied in the description when the item is set to "in stock" and backorders "allowed, but notify customer".
+
+
 
 ### Make First Post Image Appear in Excerpt
 This will take the first image of a post when there is no feature image set.

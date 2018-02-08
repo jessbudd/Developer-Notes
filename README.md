@@ -56,6 +56,9 @@ If sub-menus show in HTML and it's not a CSS issue (is the element set to displa
 To check php arrays, wrap in a var_dump eg
 <?php var_dump(wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'walker' => $walker ))); ?>
 
+### GeneratePress: Add contact or button to header
+Adding a button or contact details in the header to the right of logo. See gist for code and instruction:
+https://gist.github.com/jessbudd/e1ffe65b634f5704c5fcc2f4d382f158
 
 ### Genesis: Add Widget Area Easily
 Put this in functions.php. This example is for a slider that appears on all pages, but could be modified easily. The key thing to note is the add_action line, it controls where the widget will go.

@@ -14,6 +14,9 @@ To get the IP of a site, type `"nslookup [site address]"` into CLI.
 
 ## WORDPRESS
 
+### Add PHP to text widget
+See gist: https://gist.github.com/jessbudd/11658238ffdcd3e3b2ea1ac6678e9a94
+
 ### Deregister css/js of plugin on front page only
 see gist: https://gist.github.com/jessbudd/293b8012740183fefae092c074c92c38
 

@@ -206,4 +206,14 @@ To access the element below another element set higher element with property/val
 `<img src="transp.gif" width="0" height="0" alt="">`
 
 ### HTML
+
 Some HTML5 tags do not work in any version of IE (eg `<main>`) and you need to explicitly add the display property to the css. 
+
+
+### Auto Updating Year on Static Sites
+
+ ```<script type="text/javascript">
+          document.write("© Collins Moore " + new Date().getFullYear()) ;
+  </script>```
+	
+	

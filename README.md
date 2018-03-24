@@ -200,6 +200,22 @@ This is particularly useful when you have an absolutely positioned icon over a s
 
 To access the element below another element set higher element with property/value `pointer-events:none`.
 
+## Command Line Tips
+
+### Resize all jpgs in folder to max width
+
+sips -Z 640 *.jpg
+
+or
+
+sips --resampleWidth 1024 *.jpg
+sips --resampleHeight 768 *.jpg
+sips -z 768 1024 *.jpg # -z takes height as a first argument
+
+https://www.lifehacker.com.au/2012/11/batch-resize-images-quickly-in-the-mac-os-xs-terminal/
+https://hackernoon.com/save-time-by-transforming-images-in-the-command-line-c63c83e53b17
+
+
 ## Internet Explorer
 ### Word Breaks
 `<wbr>` is not supported by any version of IE. If word-wrap:word-break and word-break: word-all do not work, you can insert the following code after the element:
@@ -215,12 +231,5 @@ Some HTML5 tags do not work in any version of IE (eg `<main>`) and you need to e
  ```<script type="text/javascript">
           document.write("© Collins Moore " + new Date().getFullYear()) ;
   </script>```
-	
-	
-## Command Line Tips
-
-Resize all jpgs in folder to max width
-
-sips -Z 640 *.jpg
-
-https://www.lifehacker.com.au/2012/11/batch-resize-images-quickly-in-the-mac-os-xs-terminal/
+  
+ 

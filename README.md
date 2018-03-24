@@ -217,3 +217,10 @@ Some HTML5 tags do not work in any version of IE (eg `<main>`) and you need to e
   </script>```
 	
 	
+## Command Line Tips
+
+Resize all jpgs in folder to max width
+
+sips -Z 640 *.jpg
+
+https://www.lifehacker.com.au/2012/11/batch-resize-images-quickly-in-the-mac-os-xs-terminal/

@@ -94,6 +94,12 @@ function custom_do_slider_everywhere() {
 	) );
 } </pre>
 
+### Create New User From Cpanel
+
+See Gist
+
+https://gist.github.com/jessbudd/7d9a4fa4c5cd843b4cd8931f4221da93
+
 ## Woocommerce 
 
 ### Add Icon to Cart Button 

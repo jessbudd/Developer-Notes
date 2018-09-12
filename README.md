@@ -249,8 +249,6 @@ Some HTML5 tags do not work in any version of IE (eg `<main>`) and you need to e
 
 ### Auto Updating Year on Static Sites
 
- ```<script type="text/javascript">
-          document.write("© Collins Moore " + new Date().getFullYear()) ;
-  </script>```
+ ```<script type="text/javascript">document.write("© Collins Moore " + new Date().getFullYear()) ;</script>```
   
  

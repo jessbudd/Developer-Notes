@@ -11,6 +11,46 @@ To get to the webmail login of most pages type `":2096"` to the end of the url a
 To get the IP of a site, type `"nslookup [site address]"` into CLI.
 
 
+## SNIPPETS
+
+### Hide nav on scroll down, show on scroll up
+<pre>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-100px"; //however tall your nav is
+  }
+  prevScrollpos = currentScrollPos;
+}
+</pre>
+
+### Accessible smooth scrolling (moves keyboard focus)
+<pre>
+    $(function() {
+      $('a[href="#id"]').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            target.focus(); // Setting focus
+            if (target.is(":focus")){ // Checking if the target was focused
+              return false;
+            } else {
+              target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+              target.focus(); // Setting focus
+            };
+            return false;
+          }
+        }
+      });
+    });
+    </pre>
 
 ## WORDPRESS
 

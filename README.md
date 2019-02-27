@@ -282,6 +282,21 @@ https://hackernoon.com/save-time-by-transforming-images-in-the-command-line-c63c
 `<wbr>` is not supported by any version of IE. If word-wrap:word-break and word-break: word-all do not work, you can insert the following code after the element:
 `<img src="transp.gif" width="0" height="0" alt="">`
 
+### IE only styling
+<pre>     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     		  /*insert styles here*/
+            }
+       }</pre>
+
+
+### Edge only styling
+<pre>     @media all and (-ms-ime-align: auto) {
+      		 /*insert styles here*/
+            }
+       }</pre>
+
+
+
 ### HTML
 
 Some HTML5 tags do not work in any version of IE (eg `<main>`) and you need to explicitly add the display property to the css. 

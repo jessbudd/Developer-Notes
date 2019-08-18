@@ -177,7 +177,21 @@ See gist: https://gist.github.com/jessbudd/32b2bc6450750643683b21baa8b89274
 
 This works on the product archive page only. Single product pages will have a text warning applied in the description when the item is set to "in stock" and backorders "allowed, but notify customer".
 
+### Change Related Products Text
 
+<pre>
+  // Change WooCommerce "Related products" text
+add_filter('gettext', 'change_rp_text', 10, 3);
+add_filter('ngettext', 'change_rp_text', 10, 3);
+
+function change_rp_text($translated, $text, $domain)
+{
+     if ($text === 'Related products' && $domain === 'woocommerce') {
+         $translated = esc_html__('You might also like:', $domain);
+     }
+     return $translated;
+}</pre>
+Credit: https://themeskills.com/change-related-products-text-woocommerce/
 
 ### Make First Post Image Appear in Excerpt
 This will take the first image of a post when there is no feature image set.

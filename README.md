@@ -163,6 +163,8 @@ Add font-awesome to head link and this code to custom css:
 	}
 	;?>
 ```
+### Move product tabs to short description area
+https://gist.github.com/jessbudd/1a65c1d57a0e017cdb0c945b50ec14a3
 
 ### Add Recent Products to Theme Template
 See gist: https://gist.github.com/jessbudd/66335479ac69391e038d85dfc95e94a4

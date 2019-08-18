@@ -193,6 +193,29 @@ function change_rp_text($translated, $text, $domain)
 }</pre>
 Credit: https://themeskills.com/change-related-products-text-woocommerce/
 
+
+### Product Gallery Options
+
+<pre>
+add_filter('woocommerce_single_product_carousel_options', 'ud_update_woo_flexslider_options');
+function ud_update_woo_flexslider_options($options) {
+      // show arrows
+      $options['directionNav'] = true;
+      $options['animation'] = "slide";
+      // infinite loop
+      $options['animationLoop'] = true;
+      // autoplay (work with only slideshow too)
+      $options['slideshow'] = true;
+      //$options['autoplay'] = true;
+      // control par texte (boolean) ou bien par vignettes
+      // $options['controlNav'] = true;
+      //$options['controlNav'] = "thumbnails";
+      // $options['mousewheel'] = true;
+      return $options;
+  }
+  </pre>
+  Credit: https://stackoverflow.com/questions/46353307/navigation-arrows-in-woocommerce-3-x-product-gallery-slider
+  
 ### Make First Post Image Appear in Excerpt
 This will take the first image of a post when there is no feature image set.
 <pre>function improved_trim_excerpt($text) {

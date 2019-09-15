@@ -345,4 +345,11 @@ Some HTML5 tags do not work in any version of IE (eg `<main>`) and you need to e
 
  ```<script type="text/javascript">document.write("© Collins Moore " + new Date().getFullYear()) ;</script>```
   
+ ## NPM
  
+ I was getting consistent permission issues with installing npm packages. This [thread](https://npm.community/t/global-installs-sudo-npm-i-g-fail-on-mac-after-6-5-upgrade-works-fine-after-6-4-1-downgrade/4082/27) listed a fix to add permissions to that folder which worked for me:
+```
+sudo chown -R $(whoami) ~/.npm 
+sudo chown -R $(whoami) /usr/local/lib 
+sudo chown -R $(whoami) /usr/local/bin
+ ```

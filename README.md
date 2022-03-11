@@ -2,6 +2,18 @@
 
 This repo is a list of notes for my future reference.
 
+## regex
+
+```
+^ - starts with
+$ - ends with
+\ - escape
+i - ignore case
+? - optional
+[0-9]* - has characters between 0-9, but doesnt matter how many digits
+
+eg ^(string)([0-9]*$)?)$\i
+```
 
 ## Shortcuts
 To get to the cpanel login of most pages type `":2082"` to the end of the url address.
